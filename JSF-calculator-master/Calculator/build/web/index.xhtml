@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </h:head>
+    <h:body>
+        
+	<div id='id1'></div>
+        
+        <script type='text/javascript'>
+	
+		$(document).ready(function() {
+			$('#id1').append('<p>Number 1:&nbsp; <input type="text" id="num1" value="0" maxlength="50" onchange="ClickFunction()"> <span id="error1"></span> </input></p>');
+			$('#id1').append('<p><p>Number 2:&nbsp; <input type="text" id="num2" value="0" maxlength="50" onchange="ClickFunction()"> <span id="error2"></span> </input></p></p>');
+			$('#id1').append('<p> <select id="praksi" style="width: 50px" onchange="ClickFunction()"><option value="+">+</option> <option value="-">-</option> <option value="*">*</option><option value="/">/</option></select></p>');
+			$('#id1').append('<button onclick="ClickFunction()">Calculate</button>');
+			$('#id1').append('<p>Result: <span id="resultspan"></span></p>');
+			
+			$('#num1').addClass('input-button');
+			$('#num2').addClass('input-button');
+			$('#num1').css('background-color','#DDDDDD');
+			$('#num2').attr('style','background-color: #AAAAAA;');
+			$('#num1').attr('id','num1');
+		});
+		
+		function ClickFunction () {
+			var a = document.getElementById("num1").value;
+				if (isNaN(a)) document.getElementById('error1').innerHTML = 'Please input a number';
+				else document.getElementById('error1').innerHTML = '';
+			var b = document.getElementById('num2').value;
+				if (isNaN(b)) document.getElementById('error2').innerHTML = 'Please input a number';
+				else document.getElementById('error2').innerHTML = '';
+			var praksi = document.getElementById('praksi').value;
+			if (praksi==='+') {
+				var c = Number(a) + Number(b);
+				console.log(c);
+				document.getElementById('resultspan').innerHTML = c;
+			}
+			else if (praksi==='-') {
+				var c = Number(a) - Number(b);
+				console.log(c);
+				document.getElementById('resultspan').innerHTML = c;
+			}
+			else if (praksi==='*') {
+				var c = Number(a) * Number(b);
+				console.log(c);
+				document.getElementById('resultspan').innerHTML = c;
+			}
+			else if (praksi==='/') {
+				var c = Number(a) / Number(b);
+				console.log(c);
+				document.getElementById('resultspan').innerHTML = c;
+			};
+		}
+	</script> 
+         
+    </h:body>
+</html>
+
