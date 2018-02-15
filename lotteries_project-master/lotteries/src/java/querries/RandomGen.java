@@ -1,0 +1,83 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package querries;
+
+import java.security.SecureRandom;
+import java.util.ArrayList;
+
+/**
+ *
+ * @author Orestis
+ */
+public class RandomGen {
+    
+static SecureRandom rnd = new SecureRandom();
+private static final String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    
+
+protected static String LotteryGen(){
+   StringBuilder sb = new StringBuilder( 14 );
+   for( int i = 0; i < 14; i++ ) 
+      sb.append( AB.charAt( rnd.nextInt(AB.length()) ) );
+    String random = sb.toString();
+    return random;
+  
+}
+
+static ArrayList <String> Roll = new ArrayList<>();
+
+protected static ArrayList Roll(){
+    String roll=null;
+    
+    
+    
+    for (int x=1; x<=26; x++){
+        String r1 = Character.toString((char)(64+x)); 
+        
+        for (int i=1; i<=26 ; i++){
+            String r2 = Character.toString((char)(64+i));
+    
+                for (int j=1; j<=99 ; j++){
+                
+                if (j>=1 && j<=9){
+                    roll = r1 + r2 + "0"+j;
+                }
+                else{
+                    roll = r1+r2+j;
+                }
+            
+                Roll.add(roll);
+                
+            }
+         
+            
+            }
+        }
+               
+  return Roll;
+    
+}
+
+static int ticket_count=0;
+
+public static String GenerateNow(int ticket_count){
+    String ticket=null;
+    
+    System.out.println("The Ticket Number is : ");
+    ticket = Roll().get(ticket_count-1)+"-"+LotteryGen();
+    System.out.println(ticket);
+    
+    
+    
+    
+         return ticket;
+         
+         
+     }
+    
+
+
+}
