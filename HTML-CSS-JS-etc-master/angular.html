@@ -1,0 +1,27 @@
+<html ng-app="myApp">
+    <head>
+        <title>Hello World</title>
+    </head>
+     
+    <body ng-controller="AppController as ctrl">
+        <label>Name :</label><input type="text" ng-model="name" placeholder="Enter your name"/>
+        <h1>Hello <span ng-bind="name"></span></h1>
+        <h1>Hey {{name}}</h1>
+		
+		<label>Name :</label><input type="text" ng-model="ctrl.name" placeholder="Enter your name"/><br/><br/>  
+ 
+	    <span ng-bind="ctrl.name"></span><br/><br/>  
+		<button ng-click="ctrl.sayHello()"> Hello </button>
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js">
+        </script>
+		<script>
+			angular.module('myApp', [])
+			.controller('AppController', [function() {
+				var self= this;
+				self.name = 'BLA BLA';
+				self.sayHello = function(){alert('hello '+self.name);}
+			}]);
+		</script>
+    </body>
+</html>

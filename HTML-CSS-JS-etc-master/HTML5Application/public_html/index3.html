@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script
+		  src="http://code.jquery.com/jquery-3.2.1.js"
+		  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+		  crossorigin="anonymous">
+		</script>
+	</head>
+<body>
+<p id="xxx"> Kalimera </p>
+<p> Kalispera </p>
+<a href="http://in.gr"> Click me</a>
+
+<script>
+	//$(function(){
+	$(document).ready(function(){
+		//$("p").click(function(){
+		$("#xxx").click(function(){
+			$(this).fadeTo(2000,0.3, function() {});
+		});
+	});
+	
+	$(function(){
+		$("#xxx").append('<div>Created div</div>');
+	});
+	
+	$(function(){
+		$("a").click(function(event){
+			alert("Thanks for visiting!");
+		});
+	});
+</script>
+
+</body>
+</html>

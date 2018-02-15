@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+	<h1>This is index2.html</h1>
+	<a href="index.html">Click here to go back to index.html</a> <br>
+	<a href="index3.html">Click here to go to Index3.html</a>
+	<br>
+	<div id="id1"></div>
+	<!-- <p>Number1:&nbsp <input type="text" id="num1" value="0" maxlength="50" onchange="ClickFunction()"> <span id="error1"></span> </p>
+	<p>Number2:&nbsp <input type="text" id="num2" value="0" maxlength="50" onchange="ClickFunction()"> <span id="error2"></span> </p>
+	
+	<p> 
+		<select id="praksi" style="width: 50px" onchange="ClickFunction()">
+		  <option value="+">+</option>
+		  <option value="-">-</option>
+		  <option value="*">*</option>
+		  <option value="/">/</option>
+		</select> 
+	</p> -->
+		
+	<!-- <button onclick="ClickFunction()">Calculate</button> -->
+	<!-- <button id="#calcbutton" type="button">Calculate</button> -->
+	
+	<!-- <p>Result: <span id="resultspan"></span></p> -->
+	
+	<script>
+	
+		$(document).ready(function() {
+			$("#id1").append("<p>Number 1:&nbsp <input type='text' id='num1' value='0' maxlength='50' onchange='ClickFunction()'> <span id='error1'></span> </p>");
+			$("#id1").append("<p><p>Number 2:&nbsp <input type='text' id='num2' value='0' maxlength='50' onchange='ClickFunction()'> <span id='error2'></span> </p></p>");
+			$("#id1").append("<p> <select id='praksi' style='width: 50px' onchange='ClickFunction()'><option value='+'>+</option> <option value='-'>-</option> <option value='*'>*</option><option value='/'>/</option></select></p>");
+			$("#id1").append("<button onclick='ClickFunction()'>Calculate</button>");
+			$("#id1").append("<p>Result: <span id='resultspan'></span></p>");
+			
+			$("#num1").addClass("input-button");
+			$("#num2").addClass("input-button");
+			$("#num1").css("background-color","#DDDDDD");
+			$("#num2").attr("style","background-color: #AAAAAA;");
+			$("#num1").attr("id","num1");
+		});
+		
+		//var button = document.querySelector("#calcbutton");
+		//button.addEventListener("click",ClickFunction);
+	
+		function ClickFunction () {
+			var a = document.getElementById('num1').value;
+				if (isNaN(a)) document.getElementById("error1").innerHTML = "Please input a number";
+				else document.getElementById("error1").innerHTML = ""
+			var b = document.getElementById("num2").value;
+				if (isNaN(b)) document.getElementById("error2").innerHTML = "Please input a number";
+				else document.getElementById("error2").innerHTML = ""
+			var praksi = document.getElementById("praksi").value;
+			if (praksi=="+") {
+				var c = Number(a) + Number(b);
+				console.log(c);
+				document.getElementById("resultspan").innerHTML = c;
+			}
+			else if (praksi=="-") {
+				var c = Number(a) - Number(b);
+				console.log(c);
+				document.getElementById("resultspan").innerHTML = c;
+			}
+			else if (praksi=="*") {
+				var c = Number(a) * Number(b);
+				console.log(c);
+				document.getElementById("resultspan").innerHTML = c;
+			}
+			else if (praksi=="/") {
+				var c = Number(a) / Number(b);
+				console.log(c);
+				document.getElementById("resultspan").innerHTML = c;
+			};
+		}
+	</script> 
+	
+</body>
+</html>

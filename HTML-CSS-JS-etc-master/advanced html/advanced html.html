@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script>
+    $('#videoID').click(function(){this.paused?this.play() :this.pause();});
+    $(window).keypress(function(e) {
+        if (e.keyCode == 32 || e.keyCode === 32) {
+			e.preventDefault();
+			console.log(5);
+            $('#videoID').get(0).paused?$('#videoID').get(0).play() :$('#videoID').get(0).pause();
+        }
+    });
+</script>
+
+</head>
+<body>
+
+<audio controls height="30">
+  <source src="gong.ogg" type="audio/ogg">
+Your browser does not support the audio element.
+</audio>
+
+<video id="videoID" width="600" controls height="50%" id="videoID" poster="mov_bbb.png">
+    <source src="mov_bbb.mp4" type="video/mp4"/>
+</video> <br/>
+
+<button onclick="playVid()" type="button">Play Video</button>
+<button onclick="pauseVid()" type="button">Pause Video</button><br/> 
+
+<p><img src="https://www.w3schools.com/w3css/img_fjords.jpg" id="Image" alt="IMAGE USED TO BE HERE"/></p>
+____________________________________________________________________
+<br/>
+<div id='dropbox'><p> DROP IMAGE HERE </p></div>
+
+<script> 
+var vid = document.getElementById("myVideo"); 
+
+function playVid() { 
+    vid.play(); 
+} 
+
+function pauseVid() { 
+    vid.pause(); 
+} 
+
+
+function initiate() {
+	source1=document.getElementById('Image');
+	source1.addEventListener('dragstart',dragged,false);
+	drop=document.getElementById('dropbox');
+	drop.addEventListener('dragenter', function(e){e.preventDefault(); }, false);
+	drop.addEventListener('dragover', function(e){e.preventDefault(); }, false);
+	drop.addEventListener('drop', dropped,false);
+}
+function dragged(e) {
+	var code='<p><img src="'+source1.getAttribute('src')+'"></p>';
+	e.dataTransfer.setData('Text',code);
+	console.log(5);
+	
+}
+function dropped(e){
+	e.preventDefault();
+	drop.innerHTML=e.dataTransfer.getData('Text');
+	document.getElementById("Image").setAttribute("src","");
+}
+window.addEventListener('load',initiate,false);
+
+</script> 
+
+<br/>
+<h1>My First Google Map</h1>
+
+<div id="map" style="width:100%;height:500px"></div>
+
+<script>
+function myMap() {
+
+  var lat = prompt("Please enter latitude", "Range is -90 to 90");
+  var lng = prompt("Please enter longitude", "Range is -180 to 180");
+	
+  var myCenter = new google.maps.LatLng(lat,lng);
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {center: myCenter, zoom: 14};
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  var marker = new google.maps.Marker({position:myCenter});
+  marker.setMap(map);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfFWSvwo2Bn1ZTJWbeEJmo8n4kWD1s4Sc&callback=myMap"></script>
+
+</body>
+</html>

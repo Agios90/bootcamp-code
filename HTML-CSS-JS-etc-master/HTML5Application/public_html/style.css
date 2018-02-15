@@ -1,0 +1,124 @@
+
+#div_id_1 {
+		background: #f0f;
+}
+
+div_id_1 {
+		margin: 0 15 22 7;
+		margin-left:
+}
+
+option {
+		color: red;
+}
+
+optgroup {
+		color:green;
+}
+
+p.ex1 {
+		font:25px Times New Roman;
+}
+
+a:visited {
+		color:red;
+}
+
+a:hover {
+		color:green;
+}
+
+a:active {
+		color:grey;
+}
+ td {
+		background-color: #65ACC9;
+ }
+ 
+ td.light {
+		background-color: #87CEEB;
+ }
+ 
+ table th {
+		padding:10px;
+ }
+
+/*
+
+p span {
+		matches all span elements that are descendants of p elements
+}
+
+p.center {
+		matches all p elements that are of class center
+}
+
+p#id_1 {
+	
+}
+
+p.center span {
+	
+}
+
+p > span {
+		matches all span elements that are immediate children of p (1 tab mesa)
+}
+
+div * p {
+		p exists anywhere inside div
+}
+
+p ~ ul {
+		ul general sibling of p (anywhere after a)
+}
+
+div + p {
+		p adjacent sibling of a
+}
+
+a[title] {
+		matches an element with attribute "title" eg table[border]
+}
+
+a[title="value"] {
+		matches an element with attribute "title" eg table[border]="1"
+}
+
+
+
+selida 120 na kanw apo ena paradeigma gia to kathe typography css property
+*/
+
+.top {
+  line-height: 5em;
+}
+
+.text-top {
+  line-height: 5em;
+}
+
+.top span {
+  vertical-align: top;
+}
+.text-top span {
+  vertical-align: text-top;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
