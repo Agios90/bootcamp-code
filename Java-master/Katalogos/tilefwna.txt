@@ -1,0 +1,17 @@
+DROP DATABASE tilefwna;
+CREATE DATABASE tilefwna;
+USE tilefwna;
+
+CREATE TABLE members (
+id int(10) unsigned not null auto_increment primary key,
+name varchar(30) not null,
+lastname varchar(30) not null,
+stathero bigint unsigned,
+kinito bigint unsigned
+);
+
+INSERT INTO members(name, lastname, stathero, kinito) values 
+("angelos", "agiorgitis",2109090909,6990909090),
+("xrhstos","dalamitras",2108080808,6980808080),
+("aghsilaos","gewrgoulias",2107070707,6970707070),
+("george","pasparakis",2106060606,6960606060);
